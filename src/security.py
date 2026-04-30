@@ -9,7 +9,7 @@ MAX_USER_MESSAGE_CHARS = 4000
 # We don't reject — we annotate so the agent (via the system prompt) stays
 # vigilant. Hard rejection on legitimate phrases would frustrate real users.
 _SUSPICIOUS_PATTERNS = [
-    re.compile(r"ignore (?:all|previous|the above|prior) (?:instructions|rules)", re.I),
+    re.compile(r"ignore\s+(?:all\s+)?(?:the\s+)?(?:previous|prior|above|earlier)?\s*(?:instructions|rules|prompts?)", re.I),
     re.compile(r"system prompt", re.I),
     re.compile(r"you are (?:now|actually) (?:a|an) ", re.I),
     re.compile(r"(?:reveal|print|show) (?:your )?(?:system|hidden) (?:prompt|instructions)", re.I),

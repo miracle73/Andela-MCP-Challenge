@@ -37,7 +37,10 @@ class SupportAgent:
     def __init__(self, settings: Settings, mcp: MCPClient) -> None:
         self.settings = settings
         self.mcp = mcp
-        self.openai = AsyncOpenAI(api_key=settings.openai_api_key)
+        self.openai = AsyncOpenAI(
+            api_key=settings.openai_api_key,
+            base_url=settings.openai_base_url,
+        )
         self._tools_cache: list[dict[str, Any]] | None = None
 
     async def _tools(self) -> list[dict[str, Any]]:

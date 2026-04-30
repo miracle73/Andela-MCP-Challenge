@@ -20,6 +20,7 @@ def settings():
     return Settings(
         openai_api_key="sk-test-stub",
         openai_model="gpt-4o-mini",
+        openai_base_url=None,
         mcp_server_url="https://order-mcp-74afyau24q-uc.a.run.app/mcp",
         log_level="WARNING",
     )
